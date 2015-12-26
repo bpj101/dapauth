@@ -1,6 +1,8 @@
+'use strict';
 module.exports = function (grunt) {
 	grunt.registerTask('build', [
-		'compileAssets',
+		'bower:install', //custom install bower files in assets/js/dependencies
+    'compileAssets',
 		'linkAssetsBuild',
 		'clean:build',
 		'copy:build'

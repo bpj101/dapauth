@@ -1,0 +1,39 @@
+{
+  "name": "dapauth",
+  "description": "a Sails application",
+  "main": "app.js",
+  "authors": [
+    "PaulJulian"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/bpj101/dapauth",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower-source",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "~2.8",
+    "angular": "~1.4.8",
+    "foundation": "~5.5.3"
+  },
+  "exportsOverride": {
+    "angular": {
+      "js/dependencies": "angular.js"
+    },
+     "jquery": {
+      "js/dependencies": "dist/jquery.min.js"
+    },
+    "foundation": {
+      "js/dependencies": "js/foundation.min.js",
+      "css": "css/foundation.min.css"
+    },
+    "moment": {
+      "js/dependencies": "min/moment-with-locales.min.js"
+    }
+  }
+}

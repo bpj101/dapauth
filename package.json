@@ -1,7 +1,7 @@
 {
   "name": "dapauth",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "a Sails application",
   "keywords": [],
   "dependencies": {
@@ -33,5 +33,9 @@
     "url": "git://github.com/PaulJulian/dapauth.git"
   },
   "author": "PaulJulian",
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "bower": "^1.7.1",
+    "grunt-bower-task": "^0.4.0"
+  }
 }
