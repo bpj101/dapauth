@@ -31,9 +31,12 @@ var jsFilesToInject = [
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/jquery/jquery.min.js',
   'js/dependencies/foundation/foundation.min.js',
+  'js/dependencies/angular/angular.js',
   'js/dependencies/**/*.js',
   'js/public/signup/signupMod.js',
   'js/public/signup/signupCtrl.js',
+  'js/public/login/loginMod.js',
+  'js/public/login/loginCtrl.js',
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
