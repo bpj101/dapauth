@@ -41,13 +41,11 @@ module.exports = {
                 return res.negotiate(err);
               }
 
-              //SESSION VAR
+              req.session.me = newUser.id;
 
               console.log('User Added');
 
-              return res.json({
-                id: newUser.id
-              });
+              return res.ok();
             });
           }
         });

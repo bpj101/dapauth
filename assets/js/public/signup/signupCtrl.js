@@ -13,7 +13,7 @@ angular.module('SignupMod')
         password: $scope.password
       })
         .then(function onSuccess(response) {
-          window.location = '/user';
+          window.location = '/dashboard';
         })
         .catch(function onError(err) {
           console.log('Error: ' + err);
