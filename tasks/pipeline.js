@@ -17,7 +17,12 @@ var tmpPath = '.tmp/public/';
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+  
+  // Load app.css after everything else
+  'styles/foundation/foundation.min.css',
+  'styles/importer.css',
+  'styles/**/*.css',
+  'styles/app.css'
 ];
 
 
@@ -33,14 +38,18 @@ var jsFilesToInject = [
   'js/dependencies/foundation/foundation.min.js',
   'js/dependencies/angular/angular.js',
   'js/dependencies/**/*.js',
+  'js/private/dashboard/dashMod.js',
+  'js/private/dashboard/dashCtrl.js',
   'js/public/signup/signupMod.js',
   'js/public/signup/signupCtrl.js',
   'js/public/login/loginMod.js',
   'js/public/login/loginCtrl.js',
 
+
+
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  'js/**/*.js',
+  'js/**/*.js'
 
   // Use the "exclude" operator to ignore files
   // '!js/ignore/these/files/*.js'
@@ -72,5 +81,5 @@ module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
 // Transform paths relative to the "assets" folder to be relative to the public
 // folder, preserving "exclude" operators.
 function transformPath(path) {
-  return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
+  return (path.substring(0, 1) === '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
 }

@@ -10,7 +10,7 @@ angular.module('LoginMod')
       password: $scope.password
     }).then(function onSuccess() {
       console.log('Login Passed');
-      // window.location('/');
+      window.location = '/dashboard';
     }).catch(function onError(err) {
       if (err.status == 400 || 404) {
         toastr.error('Invalid Credentials', 'Error',{

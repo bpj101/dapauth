@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!--STYLES-->
-  <link rel="stylesheet" href="/styles/angular-toastr/angular-toastr.min.css">
-  <link rel="stylesheet" href="/styles/app.css">
-  <link rel="stylesheet" href="/styles/foundation/foundation.min.css">
-  <link rel="stylesheet" href="/styles/importer.css">
-  <!--STYLES END-->
-  <title>Dashboard</title>
-</head>
-<body>
-  <div class="top-bar" id="main-menu">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu vertical medium-horizontal" data-responsive-menu="drilldown medium-dropdown">
-      <li class="has-submenu">
-        <a href="#">One</a>
-        <ul class="submenu menu vertical" data-submenu>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
+  <head>
+    <meta charset="UTF-8">
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/foundation/foundation.min.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/angular-toastr/angular-toastr.min.css">
+    <link rel="stylesheet" href="/styles/app.css">
+    <!--STYLES END-->
+    <title>Dashboard</title>
+  </head>
+  <body ng-app="DashMod" ng-controller="DashCtrl" ng-init="getUser()">
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Dashboard</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="active"><a href="/logout">Logout</a></li>
         </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </di
-<!--SCRIPTS-->
-<script src="/js/dependencies/sails.io.js"></script>
-<script src="/js/dependencies/jquery/jquery.min.js"></script>
-<script src="/js/dependencies/foundation/foundation.min.js"></script>
-<script src="/js/dependencies/angular/angular.js"></script>
-<script src="/js/dependencies/angular-toastr/angular-toastr.min.js"></script>
-<script src="/js/dependencies/angular-toastr/angular-toastr.tpls.js"></script>
-<script src="/js/dependencies/moment/moment-with-locales.min.js"></script>
-<script src="/js/public/signup/signupMod.js"></script>
-<script src="/js/public/signup/signupCtrl.js"></script>
-<script src="/js/public/login/loginMod.js"></script>
-<script src="/js/public/login/loginCtrl.js"></script>
-<!--SCRIPTS END-->
-</body>
+        
+      </section>
+    </nav>
+    <div class="row">
+      <h1>Dashboard</h1>
+      <div class="row">
+        <div class="large-2 columns">
+          <img ng-src="{{user.gravatarUrl}}">
+        </div>
+        <div class="large-8 columns">
+          <ul>
+            <li>Name: {{user.name}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Member Since: {{user.createdAt}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--SCRIPTS-->
+    <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/dependencies/jquery/jquery.min.js"></script>
+    <script src="/js/dependencies/foundation/foundation.min.js"></script>
+    <script src="/js/dependencies/angular/angular.js"></script>
+    <script src="/js/dependencies/angular-toastr/angular-toastr.min.js"></script>
+    <script src="/js/dependencies/angular-toastr/angular-toastr.tpls.js"></script>
+    <script src="/js/dependencies/moment/moment-with-locales.min.js"></script>
+    <script src="/js/private/dashboard/dashMod.js"></script>
+    <script src="/js/private/dashboard/dashCtrl.js"></script>
+    <script src="/js/public/signup/signupMod.js"></script>
+    <script src="/js/public/signup/signupCtrl.js"></script>
+    <script src="/js/public/login/loginMod.js"></script>
+    <script src="/js/public/login/loginCtrl.js"></script>
+    <!--SCRIPTS END-->
+  </body>
 </html>

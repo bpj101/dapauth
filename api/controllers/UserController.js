@@ -80,11 +80,29 @@ module.exports = {
           return res.notFound();
         },
         success: () => {
-          // req.session.me = user.id;
+          req.session.me = user.id;
           console.log("SUCCESS");
           return res.ok();
         }
       });
+    });
+  },
+  logout: (req, res) => {
+    
+    User.findOne({
+      id: req.session.me
+    },
+      (err, user) => {
+        if (err) {
+          return res.negotiate(err);
+        }
+        if(!user) {
+          return res.notFound();
+        }
+
+      req.session.me = null;
+      console.log('You are Loged Out');
+      return res.redirect('/');
     });
   }
 };
